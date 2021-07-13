@@ -2,7 +2,7 @@
 # the dev folder and put them in one folder and generates a "Core Cos"
 # so it's easy to compile them with monk.
 
-import shutil, errno, os
+import shutil, errno, os, subprocess, Classifiers2Catalogue
 
 agent_title = "C2 to DS Refresh.agents"
 injector_title = "C2 to DS Refresh"
@@ -50,12 +50,14 @@ if os.path.isdir(os.getcwd() + "/dev"):
 			path_to_content = sub_dir + "/" + contents  
 	  
 			# make the path with the current folder
-			dir_to_move = os.path.join(current_folder, path_to_content )
+			dir_to_move = os.path.join(current_folder, path_to_content)
 	  
 			# move the file
 			shutil.copy(dir_to_move, merge_folder)
 			
 	print("Files were copied to /compile_temp")
+
+	Classifiers2Catalogue.compile_catalogue()
 	
 	# Now we gotta write the big pray file
 	with open(merge_folder + '/!core.cos', 'w', encoding='utf-8') as f:
@@ -72,6 +74,7 @@ if os.path.isdir(os.getcwd() + "/dev"):
 			if sub_dir != "Scripts":
 				for contents in content_list[sub_dir]:
 					f.write("*# attach " + contents + "\n")
+		f.write("*# attach " + 'c2tods_refresh.catalogue' + "\n")
 		f.write("*# link ")
 		for contents in sorted(content_list["Scripts"]):
 			f.write(contents + " ")
