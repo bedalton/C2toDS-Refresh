@@ -5,33 +5,38 @@
 
 
 *CA links for the "wrap" rooms.*
+*
+**Atmosphere
+*
+*link grap 2070 47640 grap 10375 47640 100
+*
+**Desert Beach
+*
+*link grap 2070 48090 grap 10375 48090 100
+*
+**Biome 1
+*
+*link grap 2070 48340 grap 10375 48340 100
+*
+**Bome 2
+*
+*link grap 2070 48822 grap 10375 48822 100
+*
+**Machines to Volcano
+*
+*link grap 2070 49340 grap 10375 49340 100
+*
+**----------------------*
+*
+**Yggdrasil to Desert
+*
+*link grap 12950 47678 grap 4890 48110 100
 
-*Atmosphere
-
-link grap 2070 47640 grap 10375 47640 100
-
-*Desert Beach
-
-link grap 2070 48090 grap 10375 48090 100
-
-*Biome 1
-
-link grap 2070 48340 grap 10375 48340 100
-
-*Bome 2
-
-link grap 2070 48822 grap 10375 48822 100
-
-*Machines to Volcano
-
-link grap 2070 49340 grap 10375 49340 100
-
-*----------------------*
-
-*Yggdrasil to Desert
-
-link grap 12950 47678 grap 4890 48110 100
-
+link grap 2054 48554 grap 10393 48554 100
+link grap 10410 49362 grap 2184 49362 100
+link grap 10403 48110 grap 2030 48110 100
+link grap 2030 47792 grap 10413 47792 100
+link grap 10413 48892 grap 2018 48892 100
 
 
 *Set the game variables for easy reference.*
@@ -92,7 +97,7 @@ loop
 
 
 
-*DS used a surprise Genus classifier for it's Icons, 1 4 *, and who knows what else!! 
+*DS used a surprise Genus classifier for it's Icons, 1 4 *, and who knows what else!!
 
 *So just to be on the safe side for these non-interactable pieces, let's start at Genus 10*
 

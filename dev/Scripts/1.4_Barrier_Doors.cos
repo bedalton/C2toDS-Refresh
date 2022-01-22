@@ -42,7 +42,7 @@ attr 20
 
 mvto 4095 49222
 
-door grap 4051 49224 grap 4132 49318 0
+door grap 4051 49224 grap 4155 49318 0
 
 setv name "open" 1
 
@@ -442,11 +442,11 @@ scrp 2 2 50203 1
 
 		anim [3 2 1 0]
 
-		door grap 8758 48931 grap 8794 48931 50
+		door grap 8758 48931 grap 8854 48931 50
 
 		wait 7
 
-		door grap 8758 48931 grap 8794 48931 0
+		door grap 8758 48931 grap 8854 48931 0
 
 		wait 7
 
@@ -506,13 +506,13 @@ scrp 2 2 50203 1
 
 	subr empty
 
-		rtyp grap 8439 48936 0
 
-		rtyp grap 8478 48936 0
+		rtyp grap 8763 48936 3
 
-		rtyp grap 8579 48936 0
+		rtyp grap 8667 48936 3
 
-		rtyp grap 8758 48936 0
+		rtyp grap 8546 48936 3
+
 
 		enum 1 11 50200
 
@@ -576,7 +576,8 @@ scrp 2 2 50202 1
 
 		over
 
-		door grap 8425 48945 grap 8340 48945 100
+*		door grap 8425 48945 grap 8340 48945 100
+		door grap 8425 48945 grap 8498 48945 100
 
 		setv name "open" 1
 
@@ -590,7 +591,7 @@ scrp 2 2 50202 1
 
 		over
 
-		door grap 8425 48945 grap 8340 48945 0
+		door grap 8425 48945 grap 8497 48945 0
 
 		setv name "open" 0
 
@@ -602,13 +603,11 @@ scrp 2 2 50202 1
 
 	subr flood
 
-		rtyp grap 8439 48936 9
+		rtyp grap 8763 48936 9
 
-		rtyp grap 8478 48936 9
+		rtyp grap 8667 48936 9
 
-		rtyp grap 8579 48936 9
-
-		rtyp grap 8758 48936 9
+		rtyp grap 8546 48936 9
 
 		enum 1 11 50200
 
