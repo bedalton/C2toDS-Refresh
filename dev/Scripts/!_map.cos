@@ -1,0 +1,4 @@
+* Embiggen the MAP
+doif mapw lt 50000
+    mapd 50000 50000
+endi
