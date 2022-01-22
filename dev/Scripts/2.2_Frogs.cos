@@ -3,8 +3,9 @@
 * 2 15 50217 - Tadpole
 * 2 18 50216 - Frog Egg
 
-door grap 3439 48836 grap 3470 48950 25
-door grap 5060 49830 grap 5347 49698 75
+door grap 3338 48836 grap 3443 48836 25
+door grap 5076 49822 grap 5180 49822 75
+
 
 new: comp 2 24 50216 "moe_C2toDS_froglayer" 23 0 rand 1000 3000
 pat: dull 1 "moe_C2toDS_froglayer" 21 0 0 1
@@ -25,18 +26,21 @@ repe
 *install
 
 scrp 2 24 50216 10
+
 	perm 51
 	bhvr 43
 	attr 199
 	accg 5
 	elas 0
 endm
-*timer - why is this here? Pop control? Though it doesn't have tick normally... - Verm
-*scrp 2 24 50216 9
-*endm
+*timer
+scrp 2 24 50216 9
+endm
 *activate 1
 scrp 2 24 50216 1
-	stim writ from 90 1
+	doif crea from eq 1
+		stim writ from 90 1
+	endi
 	lock
 	anim [ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20]
 	over
@@ -59,18 +63,29 @@ scrp 2 24 50216 6
 		sndc "drop"
 	endi
 endm
+*deactivate
+scrp 2 24 50216 0
+endm
 *activate 2
 scrp 2 24 50216 2
-	stim writ from 90 1
+	doif crea from eq 1
+		stim writ from 90 1
+	endi
 	mesg writ ownr 0
 endm
 *hit
 scrp 2 24 50216 3
-	stim writ from 92 1
+	doif crea from eq 1
+		stim writ from 92 1
+	endi
 endm
-*catchall
-*scrp 2 24 50216 255
+*drop
+*scrp 2 24 50216 5
 *endm
+*catchall
+scrp 2 24 50216 255
+endm
+
 
 scrp 2 18 50216 10
 	inst
@@ -80,17 +95,36 @@ scrp 2 18 50216 10
 	accg .5
 	fric 100
 	tick 500
-	bhvr 48
+	bhvr 59
 	rnge 500
 endm
 
 scrp 2 18 50216 12
-	sndc "chwp"
-	stim writ from 80 .5
+	doif from ne ownr
+		sndc "chwp"
+	endi
+	doif crea from eq 1
+		stim writ targ 80 .5
+	endi
+
 	kill ownr
 endm
 
-* not used - so I'm cleaning them out
+scrp 2 18 50216 1
+	doif crea from eq 1
+		stim writ from 86 1
+	endi
+endm
+scrp 2 18 50216 2
+	doif crea from eq 1
+		stim writ from 86 1
+	endi
+endm
+scrp 2 18 50216 3
+	doif crea from eq 1
+		stim writ from 87 1
+	endi
+endm
 
 *drop
 scrp 2 18 50216 5
@@ -178,20 +212,22 @@ scrp 2 15 50217 10
 endm
 
 scrp 2 15 50217 1
-	stim writ from 86 1
 endm
 
 scrp 2 15 50217 2
-	stim writ from 86 1
 endm
 
 scrp 2 15 50217 3
-	stim writ from 87 1
 endm
 
 scrp 2 15 50217 12
-	sndc "chwp"
-	stim writ from 80 .5
+	doif from ne ownr
+		sndc "chwp"
+	endi
+	doif crea from eq 1
+		stim writ targ 80 .5
+	endi
+
 	kill ownr
 
 endm
@@ -550,7 +586,18 @@ scrp 2 15 50216 9
 						slow
 					endi
 				endi
+
+
+
+
+
+
+
+
 			endi
+
+
+
 		endi
 	retn
 
@@ -613,7 +660,7 @@ scrp 2 15 50216 9
 
 	subr layeggs
 		setv va04 0
-		esee 2 15 50216
+		esee 2 15 50206
 			doif targ ne null and targ ne ownr
 				doif ov11 lt 2
 					addv va04 1
@@ -675,7 +722,9 @@ scrp 2 15 50216 9
 endm
 *activate 1
 scrp 2 15 50216 1
-	stim writ from 86 1
+	doif crea from eq 1
+		stim writ from 86 1
+	endi
 endm
 *collision
 *scrp 2 15 50216 6
@@ -685,23 +734,72 @@ endm
 scrp 2 15 50216 12
 	lock
 	snde "chwp"
-	stim writ from 80 1
+	doif crea from eq 1
+		stim writ from 80 1
+	endi
 	kill ownr
 	unlk
 endm
 
 
+
+*deactivate
+scrp 2 15 50216 0
+endm
 *activate 2
 scrp 2 15 50216 2
-	stim writ from 86 1
+	doif crea from eq 1
+		stim writ from 86 1
+	endi
 endm
 *hit
 scrp 2 15 50216 3
-	stim writ from 87 1
+	doif crea from eq 1
+		stim writ from 87 1
+	endi
+endm
+*pickup
+scrp 2 15 50216 4
+endm
+*drop
+scrp 2 15 50216 5
 endm
 *catchall
-*scrp 2 15 50216 255
-*endm
+scrp 2 15 50216 255
+endm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 rscr
 inst
@@ -761,38 +859,38 @@ loop
 untl va00 eq 2000
 setv va00 0
 
-***These aren't quite accurate - Verm
-***OV## Definitions***		***STIMULUS NUMBERS***		***ATTR***			***BHVR***
-*ov00	OWNR				76	Discomfort			1	Carryable		1	Activate 1
-*ov01	Age Counter			77	Eaten plant			2	Mousable		2	Activate 2
-*ov02	Energy Level		78	Eaten fruit			4	Activateable	4	Deactivate
-*ov03	Gender			79	Eaten food			8	Greedy Cabin	8	Hit
-*ov04	Horizonal Direction	80	Eaten animal		16	Invisible		16	Eat
-*ov05	Veritcal Direction	81	Eaten detritus		32	Floatable		32	Pick Up
-*ov06	Horizontal Velocity	82	Consume alchohol		64	Suffer Collisions			
-*ov07	Vertical Velocity		83	Danger plant		128	Suffer Physics			
-*ov08	Target			84	Friendly plant		256	Camera Shy			
-*ov09	Home				85	Play bug			512	Open Air Cabin			
-*ov10	Mate				86	Play critter		1024	Rotatable			
-*ov11	Lifestage			87	Hit critter			2048	Presence			
-*ov12	Sexuality			88	Play danger animal					
-*ov13	Collection			89	Activate button					
-*ov14	Boolean			90	Activate machine					
-*ov15	Stage_1 Child		91	Got machine					
-*ov16	Stage_2 Adol		92	Hit machine					
-*ov17	Stage_3 Adult/Breed	93	Got creature egg					
-*ov18	Stage_4 Elder		94	Travelled in lift					
-*ov19	Stage_5 Senile		95	Travelled through meta door					
-*ov20	Stage_6 Die/Dead		96	Travelled through internal door					
-*					97	Played with toy		
 
-***CA's***				***RTYP's***
-*Ca smell 0 (sound)		0 - Atmosphere
-*CA smell 1 (light)		1 - Wooden Walkway
-*CA smell 2 (heat)		2 - Concrete Walkway
-*Ca smell 3 (water)		3 - Indoor Corridor
+***OV## Definitions***		***STIMULUS NUMBERS***		***ATTR***				***BHVR***
+*ov00	OWNR				76	Discomfort			1	Carryable			1	Activate 1
+*ov01	Age Counter			77	Eaten plant			2	Mousable			2	Activate 2
+*ov02	Energy Level		78	Eaten fruit			4	Activateable		4	Deactivate
+*ov03	Gender				79	Eaten food			8	Greedy Cabin		8	Hit
+*ov04	Horizonal Direction	80	Eaten animal		16	Invisible			16	Eat
+*ov05	Veritcal Direction	81	Eaten detritus		32	Floatable			32	Pick Up
+*ov06	Horizontal Velocity	82	Consume alchohol	64	Suffer Collisions
+*ov07	Vertical Velocity	83	Danger plant		128	Suffer Physics
+*ov08	Target				84	Friendly plant		256	Camera Shy
+*ov09	Home				85	Play bug			512	Open Air Cabin
+*ov10	Mate				86	Play critter		1024	Rotatable
+*ov11	Lifestage			87	Hit critter			2048	Presence
+*ov12	Sexuality			88	Play danger animal
+*ov13	Collection			89	Activate button
+*ov14	Boolean				90	Activate machine
+*ov15	Stage_1 Child		91	Got machine
+*ov16	Stage_2 Adol		92	Hit machine
+*ov17	Stage_3 Adult/Breed	93	Got creature egg
+*ov18	Stage_4 Elder		94	Travelled in lift
+*ov19	Stage_5 Senile		95	Travelled through meta door
+*ov20	Stage_6 Die/Dead	96	Travelled through internal door
+*							97	Played with toy
+
+***CA's***					***RTYP's***
+*Ca smell 0 (sound)			0 - Atmosphere
+*CA smell 1 (light)			1 - Wooden Walkway
+*CA smell 2 (heat)			2 - Concrete Walkway
+*Ca smell 3 (water)			3 - Indoor Corridor
 *CA smell 4 (nutrient)		4 - Outdoor Concrete
-*CA smell 5 (water)		5 - Normal Soil
+*CA smell 5 (water)			5 - Normal Soil
 *CA smell 6 (protein)		6 - Boggy Soil
 *CA smell 7 (carbohydrate)	7 - Drained Soil
 *CA smell 8 (fat)			8 - Fresh Water
