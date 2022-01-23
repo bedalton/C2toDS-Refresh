@@ -283,7 +283,12 @@ link grap 12009 49044 grap 12002 49660 1
 link grap 7886 48146 grap 7867 48404 1
 link grap 7867 48748 grap 7884 48446 1
 link grap 6281 48658 grap 6317 48404 1
-link grap 6317 48404 grap 6317 48112 100
+link grap 6317 48404 grap 6317 48112 1
+link grap 8575 48168 grap 9207 48170 1
+link grap 2409 48170 grap 3208 48170 1
+link grap 4567 48860 grap 5875 48388 1
+link grap 8223 49244 grap 6767 49108 1
+link grap 9218 48186 grap 8538 48186 1
 
 *Move the Camera and enlarge and display the Map -  These are for the dev phase.*
 
@@ -375,4 +380,9 @@ link grap 7886 48146 grap 7867 48404 0
 link grap 7867 48748 grap 7884 48446 0
 link grap 6281 48658 grap 6317 48404 0
 link grap 6317 48404 grap 6317 48112 0
+link grap 8575 48168 grap 9207 48170 0
+link grap 2409 48170 grap 3208 48170 0
+link grap 4567 48860 grap 5875 48388 0
+link grap 8223 49244 grap 6767 49108 0
+link grap 9218 48186 grap 8538 48186 0
 
