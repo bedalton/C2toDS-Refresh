@@ -1,11 +1,11 @@
-*Bat 2 16 50203 
+*Bat 2 16 50203
 *Bat Nest 2 17 50204 <----4*****
 
 
 
 new: simp 2 17 50204 "moe_C2toDS_bats" 1 60 0
 
-mvsf 7572 48910
+mvsf 7582 48930
 
 
 
@@ -571,7 +571,7 @@ scrp 2 16 50203 9
 
 
 
-*If the room with the highest concentration is water...Pick another room!		
+*If the room with the highest concentration is water...Pick another room!
 
 		doif rtyp va00 eq 8 or rtyp va00 eq 9
 
