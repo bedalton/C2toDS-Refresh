@@ -630,28 +630,34 @@ scrx 1 6 50200 9
 
 *Remove "wrap" room links*
 
-doif grap 2070 4764 ne -1 and link grap 2070 47640 grap 10375 47640 ne 0
+doif grap 2054 48554 ne -1 and link grap 2054 48554  grap 10393 48554 ne 0
 
-*Atmosphere
+*
+**Atmosphere
+*
+*	link grap 2070 47640 grap 10375 47640 0
+*
+**Desert Beach
+*
+*	link grap 2070 48090 grap 10375 48090 0
+*
+**Biome 1
+*
+*	link grap 2070 48340 grap 10375 48340 0
+*
+**Biome 2
+*
+*	link grap 2070 48822 grap 10375 48822 0
+*
+**Machines to Volcano
+*
+*	link grap 2070 49340 grap 10375 49340 0
 
-	link grap 2070 47640 grap 10375 47640 0
-
-*Desert Beach
-
-	link grap 2070 48090 grap 10375 48090 0
-
-*Biome 1
-
-	link grap 2070 48340 grap 10375 48340 0
-
-*Biome 2
-
-	link grap 2070 48822 grap 10375 48822 0
-
-*Machines to Volcano
-
-	link grap 2070 49340 grap 10375 49340 0
-
+	link grap 2054 48554 grap 10393 48554 0
+	link grap 10410 49362 grap 2184 49362 0
+	link grap 10403 48110 grap 2030 48110 0
+	link grap 2030 47792 grap 10413 47792 0
+	link grap 10413 48892 grap 2018 48892 0
 endi
 
 
