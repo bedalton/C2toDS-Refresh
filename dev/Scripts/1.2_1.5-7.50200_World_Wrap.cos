@@ -2,6 +2,7 @@
 *1	5	50200	World Wrap Camera
 *1	6	50200	World Wrap Grabber
 *1	7	50200	Mouse Pointer Tracker
+*1 7   20201   Window Resize Camera Builder
 
 
 *CA links for the "wrap" rooms.*
@@ -47,11 +48,13 @@ setv game "C2toDSBottom" 49999
 
 setv game "C2toDSLeft" 0
 
-setv game "CtoDSRight" 12448
+setv game "C2toDSRight" 12448
 
 setv game "C2toDSRoomID" gmap 6753 48383
 
+setv game "C2toDSWrapLeft" 2047
 
+setv game "C2toDSWrapRight" 10399
 
 
 
@@ -65,314 +68,16 @@ setv game "C2toDSRoomID" gmap 6753 48383
 
 
 
-*Begin counter for injecting Cameras*
-
-setv va03 0
-
-setv va04 game "C2toDSTop"
-
-subv va04 299
 
 *Set up camera heights and widths for easy change -This was mainly for Development.*
 
 *They are 400 wide, 300 high.  This helps for 800x600 displays, the minimum size for Creatures.*
 
-setv game "Camwidth" 400
+setv game "CamWidth" 400
 
-setv game "Camheight" 300
+setv game "CamHeight" 300
 
 *----------------------------------------------------------------------------------*
-
-*----------------------------------*
-
-
-
-*-Inject the Cameras and Wrap Pieces-*
-
-loop
-
-	addv va04 299
-
-	addv va03 1
-
-
-
-*DS used a surprise Genus classifier for it's Icons, 1 4 *, and who knows what else!!
-
-*So just to be on the safe side for these non-interactable pieces, let's start at Genus 10*
-
-
-
-	new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
-
-	pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "Camwidth" game "Camheight" game "Camwidth" game "Camheight"
-
-	attr 0
-
-	accg 0
-
-	fric 100
-
-	aero 0
-
-	mvto 10399 va04
-
-	scam targ 1
-
-	setv va00 10399
-
-	subv va00 8352
-
-	cmra va00 va04 0
-
-	setv ov00 va00
-
-	setv ov04 va04
-
-	tick 100
-
-
-
-	new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
-
-	pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "Camwidth" game "Camheight" game "Camwidth" game "Camheight"
-
-	attr 0
-
-	accg 0
-
-	fric 100
-
-	aero 0
-
-	mvto 10799 va04
-
-	scam targ 1
-
-	setv va00 10799
-
-	subv va00 8352
-
-	cmra va00 va04 0
-
-	setv ov00 va00
-
-	setv ov04 va04
-
-	tick 100
-
-
-
-*right side to show left side
-
-	new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
-
-	pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "Camwidth" game "Camheight" game "Camwidth" game "Camheight"
-
-	attr 0
-
-	accg 0
-
-	fric 100
-
-	aero 0
-
-	mvto 10000 va04
-
-	scam targ 1
-
-	setv va00 10000
-
-	subv va00 8352
-
-	cmra va00 va04 0
-
-	setv ov00 va00
-
-	setv ov04 va04
-
-	tick 100
-
-
-
-*left side to show right side
-
-	new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
-
-	pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "Camwidth" game "Camheight" game "Camwidth" game "Camheight"
-
-	attr 0
-
-	accg 0
-
-	fric 100
-
-	aero 0
-
-	mvto 2048 va04
-
-	scam targ 1
-
-	setv va00 2048
-
-	addv va00 8352
-
-	cmra va00 va04 0
-
-	setv ov00 va00
-
-	setv ov04 va04
-
-	tick 100
-
-
-
-
-
-	new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
-
-	pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "Camwidth" game "Camheight" game "Camwidth" game "Camheight"
-
-	attr 0
-
-	accg 0
-
-	fric 100
-
-	aero 0
-
-	mvto 11199 va04
-
-	scam targ 1
-
-	setv va00 11199
-
-	subv va00 8352
-
-	cmra va00 va04 0
-
-	setv ov00 va00
-
-	setv ov04 va04
-
-	tick 100
-
-
-
-	new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
-
-	pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "Camwidth" game "Camheight" game "Camwidth" game "Camheight"
-
-	attr 0
-
-	accg 0
-
-	fric 100
-
-	aero 0
-
-	mvto 1648 va04
-
-	scam targ 1
-
-	setv va00 1648
-
-	addv va00 8352
-
-	cmra va00 va04 0
-
-	setv ov00 va00
-
-	setv ov04 va04
-
-	tick 100
-
-
-
-	new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
-
-	pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "Camwidth" game "Camheight" game "Camwidth" game "Camheight"
-
-	attr 0
-
-	accg 0
-
-	fric 100
-
-	aero 0
-
-	mvto 1248 va04
-
-	scam targ 1
-
-	setv va00 1248
-
-	addv va00 8352
-
-	cmra va00 va04 0
-
-	setv ov00 va00
-
-	setv ov04 va04
-
-	tick 100
-
-
-
-
-
-
-
-*----------*
-
-
-
-*Right Side Grabber
-
-	new: simp 1 6 50200 "moe_C2toDS_Camera" 1 1 1
-
-	attr 0
-
-	accg 0
-
-	tick 9.75
-
-	fric 100
-
-	aero 0
-
-	mvto 10400 va04
-
-*I Am on the right of the world, in the 100000 range*
-
-	sets name "WhichWrapPieceAmI?" "Right"
-
-
-
-*Left Side Grabber
-
-	new: simp 1 6 50200 "moe_C2toDS_Camera" 1 1 1
-
-	attr 0
-
-	accg 0
-
-	tick 9.75
-
-	fric 100
-
-	aero 0
-
-	mvto 1647 va04
-
-	sets name "WhichWrapPieceAmI?" "Left"
-
-untl va03 eq 8
-
-
-
-*----END INJECT CAMERAS AND WRAP PIECES----*
-
 
 
 *mouse pointer tracker
@@ -390,15 +95,268 @@ fric 100
 aero 0
 
 
+*----------------------------------*
+
+* Window resize watcher/ camera builder
+
+new: simp 1 7 20201 "blnk" 1 0 0
+
+attr 16
+
+tick 1
+
+*----------------------------------*
+
+*-Inject the Cameras and Wrap Pieces-*
+
+scrp 1 7 20201 123
+    tick 800
+endm
+
+
+scrp 1 7 20201 9
+    inst
+    lock
+
+    file oope 0 "WorldWrap.log.txt" 1
+
+    outs "Rebuilding wrap\n"
+
+    doif wndw eq name "CamWidth::last"
+        tick 0
+        unlk
+        file oclo
+        stop
+    endi
+
+    setv name "CamWidth::last" wndw
+
+    * Calculate panels wide
+    setv va00 wndw
+    setv va11 va00
+    divv va11 game "CamWidth"
+    setv va12 va00
+    modv va12 game "CamWidth"
+    doif va12 gt 0
+        addv va11 1
+    endi
+
+
+*Begin counter for injecting Cameras*
+
+    setv va03 0
+
+    setv va04 game "C2toDSTop"
+
+    subv va04 299
+
+    enum 1 5 50200
+        kill targ
+    next
+
+    enum 1 6 50200
+        kill targ
+    next
+
+    * Set first X
+    setv va22 game "C2toDSWrapLeft"
+
+    subv va22 va00
+
+    setv va23 game "C2toDSWrapRight"
+
+    setv va15 100
+
+    loop
+
+        addv va04 299
+
+        addv va03 1
+
+
+
+*DS used a surprise Genus classifier for it's Icons, 1 4 *, and who knows what else!!
+
+*So just to be on the safe side for these non-interactable pieces, let's start at Genus 10*
+
+        setv va10 0
+
+        reps va11
+
+
+*left side to show right side
+
+            * calc left side mirror offset
+            setv va12 va10
+
+            mulv va12 game "CamWidth"
+
+            addv va12 va22
+
+
+*           * Calculate camera-x
+
+            setv va13 va12
+
+            addv va13 8352
+
+            outv va10 outs ":" outv va12 outs "->" outv va13 outs "\n"
+
+            * Make sure left side camera is in bounds
+            doif va12 > 0
+
+                new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
+
+                pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "CamWidth" game "CamHeight" game "CamWidth" game "CamHeight"
+
+                attr 0
+
+                accg 0
+
+                fric 100
+
+                aero 0
+
+                mvto va12 va04
+
+                scam targ 1
+
+*                setv va13 3000
+
+                cmra va13 va04 0
+
+                setv ov00 va13
+
+                setv ov04 va04
+
+                tick 100
+
+                outs "Created camera at " outv posl outs "x" outv post outs "; Mapped to: " outv va13 outs "x" outv va04 outs "\n"
+            else
+                outs "Trying to create camera with a negative x: " outv va12 outs "\n"
+            endi
+
+*right side to show left side
+
+            * calculate right side mirror offset
+
+            setv va12 va10
+
+            mulv va12 game "CamWidth"
+
+            addv va12 va23
+
+            * Calculate camera position
+
+            setv va13 va12
+
+            subv va13 8352
+
+            * Make sure camera is still in bounds
+
+            setv va14 va13
+
+            addv va14 game "CamWidth"
+
+            doif va14 lt game "C2toDSRight"
+
+                new: comp 1 5 50200 "moe_C2toDS_camera" 1 1 1
+
+                pat: cmra 1 "moe_C2toDS_camera" 1 0 0 0 game "CamWidth" game "CamHeight" game "CamWidth" game "CamHeight"
+
+                attr 0
+
+                accg 0
+
+                fric 100
+
+                aero 0
+
+                mvto va12 va04
+
+                scam targ 1
+
+                cmra va13 va04 0
+
+                setv ov00 va13
+
+                setv ov04 va04
+
+                tick 100
+
+                outs "Created camera at " outv posl outs "x" outv post outs "; Mapped to: " outv va13 outs "x" outv va04 outs "\n"
+            else
+                outs "Trying to create camera with a out of bounds x: " outv va12 outs "->" outv va14 outs "\n"
+            endi
+
+*----------*
+
+
+
+*Right Side Grabber
+
+            new: simp 1 6 50200 "moe_C2toDS_Camera" 1 1 1
+
+            attr 0
+
+            accg 0
+
+            tick 9.75
+
+            fric 100
+
+            aero 0
+
+            mvto 10000 game "C2toDSTop"
+
+*I Am on the right of the world, in the 100000 range*
+
+            sets name "WhichWrapPieceAmI?" "Right"
+
+
+
+*Left Side Grabber
+
+            new: simp 1 6 50200 "moe_C2toDS_Camera" 1 1 1
+
+            attr 0
+
+            accg 0
+
+            tick 9.75
+
+            fric 100
+
+            aero 0
+
+            mvto 1647 va04
+
+            sets name "WhichWrapPieceAmI?" "Left"
+
+            * Increment X-wide
+            addv va10 1
+
+        repe
+    untl va03 eq 8
+    file oclo
+    unlk
+endm
+
+
+
+*----END INJECT CAMERAS AND WRAP PIECES----*
+
+
+
 *This might be the cause of a mild performance hit, but it keeps the cameras from blacking out.*
 
 scrp 1 5 50200 9
 
-	tick 1000
+    tick 1000
 
-	scam targ 1
+    scam ownr 1
 
-	cmra ov00 ov04 0
+    cmra ov00 ov04 0
 
 endm
 
@@ -408,9 +366,9 @@ endm
 
 scrp 1 5 50200 128
 
-	scam targ 1
+    scam ownr 1
 
-	cmra ov00 ov04 0
+    cmra ov00 ov04 0
 
 endm
 
@@ -424,15 +382,15 @@ scrp 1 6 50200 9
 
 
 
-	inst
+    inst
 
-	doif name "WhichWrapPieceAmI?" eq "Right"
+    doif name "WhichWrapPieceAmI?" eq "Right"
 
 *inst
 
-		etch 2 0 0
+        etch 2 0 0
 
-			doif targ ne null
+            doif targ ne null
 
 *	slow
 
@@ -448,81 +406,81 @@ scrp 1 6 50200 9
 
 
 
-				doif targ ne pntr and attr ge 64 and movs eq 0 and posx gt 10399
+                doif targ ne pntr and attr ge 64 and movs eq 0 and posx gt 10399
 
-					doif crea targ ne 1
+                    doif crea targ ne 1
 
-						setv va00 posl
+                        setv va00 posl
 
-						setv va01 post
+                        setv va01 post
 
-						addv va01 5
+                        addv va01 5
 
-						subv va00 8351
+                        subv va00 8351
 
-						mvsf va00 va01
+                        mvsf va00 va01
 
-					else
+                    else
 
-						setv va00 dftx
+                        setv va00 dftx
 
-						setv va01 dfty
+                        setv va01 dfty
 
-						addv va01 1
+                        addv va01 1
 
-						subv va00 8351
+                        subv va00 8351
 
-						mvsf va00 va01
+                        mvsf va00 va01
 
-						DIRN 2
+                        DIRN 2
 
-					endi
+                    endi
 
-				endi
+                endi
 
-			endi
+            endi
 
-		next
+        next
 
-	elif name "WhichWrapPieceAmI?" eq "Left"
+    elif name "WhichWrapPieceAmI?" eq "Left"
 
-		etch 2 0 0
+        etch 2 0 0
 
-			doif targ ne pntr and attr ge 64 and movs eq 0 and posx lt 2047
+            doif targ ne pntr and attr ge 64 and movs eq 0 and posx lt 2047
 
-				doif crea targ ne 1
+                doif crea targ ne 1
 
-					setv va00 posl
+                    setv va00 posl
 
-					setv va01 post
+                    setv va01 post
 
-					addv va01 5
+                    addv va01 5
 
-					addv va00 8352
+                    addv va00 8352
 
-					mvsf va00 va01
+                    mvsf va00 va01
 
-				else
+                else
 
-					setv va00 dftx
+                    setv va00 dftx
 
-					setv va01 dfty
+                    setv va01 dfty
 
-					addv va01 1
+                    addv va01 1
 
-					addv va00 8352
+                    addv va00 8352
 
-					mvsf va00 va01
+                    mvsf va00 va01
 
-				endi
+                endi
 
-			endi
+            endi
 
-		next
+        next
 
 
 
-	endi
+    endi
 
 endm
 
@@ -532,59 +490,59 @@ endm
 
 scrp 1 7 50200 9
 
-	inst
+    inst
 
-	targ pntr
+    targ pntr
 
-	setv va00 posl
+    setv va00 posl
 
-	setv va01 post
+    setv va01 post
 
-	inst
+    inst
 
-	doif game "C2toDSRoomID" = gmap va00 va01
+    doif game "C2toDSRoomID" = gmap va00 va01
 
-		targ pntr
+        targ pntr
 
-		doif posl <= 2047
+        doif posl <= 2047
 
-			scam null 0
+            scam null 0
 
-			setv va04 wndl
+            setv va04 wndl
 
-			addv va04 8352
+            addv va04 8352
 
-			setv va05 wndt
+            setv va05 wndt
 
-			doif gmap va04 va05 <> -1
+            doif gmap va04 va05 <> -1
 
-				cmra va04 va05 0
+                cmra va04 va05 0
 
-			endi
+            endi
 
-		endi
+        endi
 
-		targ pntr
+        targ pntr
 
-		doif posl >= 10399
+        doif posl >= 10399
 
-			scam null 0
+            scam null 0
 
-			setv va04 wndl
+            setv va04 wndl
 
-			subv va04 8352
+            subv va04 8352
 
-			setv va05 wndt
+            setv va05 wndt
 
-			doif gmap va04 va05 <> -1
+            doif gmap va04 va05 <> -1
 
-				cmra va04 va05 0
+                cmra va04 va05 0
 
-			endi
+            endi
 
-		endi
+        endi
 
-	endi
+    endi
 
 endm
 
@@ -597,7 +555,7 @@ rscr
 
 enum 1 5 50200
 
-	kill targ
+    kill targ
 
 next
 
@@ -605,7 +563,7 @@ next
 
 enum 1 6 50200
 
-	kill targ
+    kill targ
 
 next
 
@@ -613,24 +571,29 @@ next
 
 enum 1 7 50200
 
-	kill targ
+    kill targ
 
 next
 
 
 
 
+scrx 1 5 50200 9
+
+scrx 1 5 50200 128
+
+scrx 1 6 50200 9
 
 scrx 1 7 50200 9
 
-scrx 1 5 50200 9
+scrx 1 5 50201 9
 
-scrx 1 6 50200 9
+scrx 1 5 50201 123
 
 
 *Remove "wrap" room links*
 
-doif grap 2054 48554 ne -1 and link grap 2054 48554  grap 10393 48554 ne 0
+doif grap 2054 48554 ne -1 and link grap 2054 48554 grap 10393 48554 ne 0
 
 *
 **Atmosphere
@@ -653,11 +616,11 @@ doif grap 2054 48554 ne -1 and link grap 2054 48554  grap 10393 48554 ne 0
 *
 *	link grap 2070 49340 grap 10375 49340 0
 
-	link grap 2054 48554 grap 10393 48554 0
-	link grap 10410 49362 grap 2184 49362 0
-	link grap 10403 48110 grap 2030 48110 0
-	link grap 2030 47792 grap 10413 47792 0
-	link grap 10413 48892 grap 2018 48892 0
+    link grap 2054 48554 grap 10393 48554 0
+    link grap 10410 49362 grap 2184 49362 0
+    link grap 10403 48110 grap 2030 48110 0
+    link grap 2030 47792 grap 10413 47792 0
+    link grap 10413 48892 grap 2018 48892 0
 endi
 
 
