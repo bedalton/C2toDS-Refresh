@@ -4,12 +4,12 @@
 
 *Incubator is now properly placed - Moe
 * Aiko fixed invalid targ errors by inst'ing the enuming of creatures
-
-
+* NeoDement fixed a bunch of things!
+* Adding support for Custom Eggs Framework too why not - Verm
 
 new: vhcl 2 22 50200 "moe_C2toDS_incubator" 26 0 20
 
-cabn 53 35 135 111
+cabn 53 35 135 106
 
 cabp 21
 
@@ -17,29 +17,47 @@ pat: dull 10 "moe_C2toDS_incubator" 8 0 0 23
 
 pat: dull 11 "moe_C2toDS_incubator" 16 69 44 22
 
-attr 24
-
 pose 7
 
-frat 3
+frat 2
 
 part 10
 
-frat 3
+frat 2
 
 pose 7
 
 part 11
 
-frat 3
+frat 2
 
-tick 500
+tick 200
 
-mvto 7043 48340
+mvto 7043 48332
 
+
+*Creation script
+
+scrp 2 22 50200 10
+
+*Greedy Cabin + Invisible + Mouseable + Suffer Collisions + Suffer Physics
+	attr 218
+
+*make the hitbox a lil bit smaller so the feet can sink through the floor a bit like in C2
+	core 23 130 4 185
+
+	elas 0
+	accg 5
+	aero 5
+	perm 100
+
+endm
+
+
+*Timer script - used to check if the incubator should close (or re-open) due to the breeding limit
 
 scrp 2 22 50200 9
-	
+
 	inst
 
 	setv va98 game "breeding_limit"
@@ -76,8 +94,6 @@ scrp 2 22 50200 9
 
 		anim [ 7 6 5 4 3 2 1 0 ]
 
-		attr 16
-
 		tick 200
 
 	elif va99 < va98 and ov00 ne 0
@@ -94,7 +110,6 @@ scrp 2 22 50200 9
 
 		over
 
-		attr 24
 
 		tick 1
 
@@ -102,13 +117,10 @@ scrp 2 22 50200 9
 
 	endi
 
-
-
-
-
 endm
 
 
+*Got Carried Agent - used to check if we gotta hatch some eggs!
 
 scrp 2 22 50200 124
 
@@ -130,6 +142,8 @@ endm
 
 
 
+*Script 1001 - Try and hatch the egg that was just put in you!
+
 scrp 2 22 50200 1001
 
 	wait 5
@@ -144,6 +158,10 @@ scrp 2 22 50200 1001
 
 		seta va99 targ
 
+*override plane so it draws behind the new baby creature
+*also fixes a problem with grendel and ettin eggs trying to override the plane (scrp 3 4 2 6 and scrp 3 4 3 6 in "DS creatureBreeding.cos")
+		plne 21
+
 		setv va01 ov01
 
 		doif gtos 1 = "" and targ <> null
@@ -152,9 +170,14 @@ scrp 2 22 50200 1001
 
 		elif gtos 1 <> "" and targ <> null
 
+*zero out attributes on egg and make it invisible to norns, so we can't take it back out of the incubator
+			attr 16
+
 			targ ownr
 
-			attr 16
+*Invisible + Suffer Collisions + Suffer Physics
+*(disable picking up and greedy cabin when you put an egg in it)
+			attr 208
 
 			part 0
 
@@ -220,57 +243,169 @@ scrp 2 22 50200 1001
 
 			targ va99
 
-			anim [4 5 6 4 5 6 4 5 6 3 3 6 4 5 6 4 4 5 6 3]
+*alternate hatch anim for grendels and ettins (their eggs have 1 less frame than norn/geat eggs)
+			doif spcs = 2 or spcs = 3
 
-			snde "crak"
+				anim [4 5 4 4 5 4 4 5 4 3 3 4 4 5 4 4 4 5 4 3]
 
-			over
+				snde "crak"
 
-			stpc
+				over
 
-			wait 30
+				stpc
 
-			anim [4 5 6 4 5 6 4 5 6 3 3 6 4 5 6 4 4 5 6 3]
+				wait 30
 
-			snde "crak"
+				anim [4 5 4 4 5 4 4 5 4 3 3 4 4 5 4 4 4 5 4 3]
 
-			over
+				snde "crak"
 
-			stpc
+				over
 
-			wait 40
+				stpc
 
-			anim [4 5 4 5 4 5 6 5 3 3 4 5 6 6 5 6 5 6 5 6 5 3]
+				wait 40
 
-			snde "crak"
+				anim [4 5 4 5 4 5 4 5 3 3 4 5 4 4 5 4 5 4 5 4 5 3]
 
-			over
+				snde "crak"
 
-			stpc
+				over
 
-			wait 40
+				stpc
 
-			anim [4 5 4 5 4 5 6 5 3 3 4 5 6 6 5 6 5 6 5 6 5 3]
+				wait 40
 
-			snde "crak"
+				anim [4 5 4 5 4 5 4 5 3 3 4 5 4 4 5 4 5 4 5 4 5 3]
 
-			over
+				snde "crak"
 
-			stpc
+				over
 
-			wait 20
+				stpc
 
-			anim [4 5 6 4 5 6 4 5 6 5 6 5 6 4 5 6 4 5 6 6 6 5 6 5 6 5 6 5 4 5 6]
+				wait 20
 
-			snde "crak"
+				anim [4 5 4 4 5 4 4 5 4 5 4 5 4 4 5 4 4 5 4 4 4 5 4 5 4 5 4 5 4 5 4]
 
-			setv va00 posl
+				snde "crak"
 
-			setv va01 posb
+				setv va00 posl
 
-			over
+				setv va01 posb
 
-			pose 7
+				over
+
+				pose 6
+*Special stuff for custom eggs framework
+			elif spcs = 5
+				anms name "Anim 1"
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 30
+
+				anms name "Anim 2"
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 40
+
+				anms name "Anim 3"
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 40
+
+				anms name "Anim 4"
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 20
+
+				anms name "Anim 5"
+
+				snde "crak"
+
+				setv va00 posl
+
+				setv va01 posb
+
+				over
+
+				pose name "Cracked"
+*regular hatch anim for norns and geats
+			else
+
+				anim [4 5 6 4 5 6 4 5 6 3 3 6 4 5 6 4 4 5 6 3]
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 30
+
+				anim [4 5 6 4 5 6 4 5 6 3 3 6 4 5 6 4 4 5 6 3]
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 40
+
+				anim [4 5 4 5 4 5 6 5 3 3 4 5 6 6 5 6 5 6 5 6 5 3]
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 40
+
+				anim [4 5 4 5 4 5 6 5 3 3 4 5 6 6 5 6 5 6 5 6 5 3]
+
+				snde "crak"
+
+				over
+
+				stpc
+
+				wait 20
+
+				anim [4 5 6 4 5 6 4 5 6 5 6 5 6 4 5 6 4 5 6 6 6 5 6 5 6 5 6 5 4 5 6]
+
+				snde "crak"
+
+				setv va00 posl
+
+				setv va01 posb
+
+				over
+
+				pose 7
+
+			endi
 
 			fade
 
@@ -312,7 +447,7 @@ scrp 2 22 50200 1001
 
 			subv va01 10
 
-			wait 20
+			wait 7
 
 			mvsf va00 va01
 
@@ -322,9 +457,13 @@ scrp 2 22 50200 1001
 
 			over
 
+
+
 			targ ownr
 
-			attr 24
+*Greedy Cabin + Invisible + Mouseable + Suffer Collisions + Suffer Physics
+*(reset attributes to default now the egg has hatched)
+			attr 218
 
 		endi
 
@@ -348,6 +487,14 @@ scrp 2 22 50200 1001
 
 endm
 
+*If things go wrong, dump all contents
+scrp 2 22 50200 255
+inst
+dpas 0 0 0
+endm
+
+*goodbye!
+
 rscr
 
 enum 2 22 50200
@@ -356,5 +503,8 @@ enum 2 22 50200
 
 next
 
+scrx 2 22 50200 10
 scrx 2 22 50200 9
-
+scrx 2 22 50200 124
+scrx 2 22 50200 1001
+scrx 2 22 50200 255

@@ -6,12 +6,12 @@
 *.cos text eol=crlf
 *.att text eol=crlf
 *.catalogue text eol=crlf
-*.journal text eol=crlf
+*.ps text eol=crlf
 
+*.blk binary
+*.c16 binary
+*.s16 binary
+*.spr binary
 *.agents binary
 *.agent binary
-*.blk binary
-*.spr binary
-*.16 binary
-*.c16 binary
 *.cob binary
