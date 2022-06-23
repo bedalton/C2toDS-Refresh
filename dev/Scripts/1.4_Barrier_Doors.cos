@@ -361,7 +361,7 @@ scrp 2 2 50201 1
 
 		anim [5 4 3 2 1 0]
 
-		door grap 4051 49224 grap 4132 49318 50
+		door grap 4051 49224 grap 4155 49318 50
 
 		over
 
@@ -369,13 +369,13 @@ scrp 2 2 50201 1
 
 		setv name "open" 1
 
-		door grap 4051 49224 grap 4132 49318 100
+		door grap 4051 49224 grap 4155 49318 100
 
 	elif name "open" eq 1
 
 		anim [0 1 2 3 4 5]
 
-		door grap 4051 49224 grap 4132 49318 50
+		door grap 4051 49224 grap 4155 49318 50
 
 		over
 
@@ -383,7 +383,7 @@ scrp 2 2 50201 1
 
 		setv name "open" 0
 
-		door grap 4051 49224 grap 4132 49318 0
+		door grap 4051 49224 grap 4155 49318 0
 
 	endi
 
