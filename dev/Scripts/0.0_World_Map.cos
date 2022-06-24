@@ -629,18 +629,10 @@ setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 5409 5727 48257 48222
 rtyp va00 0 
 rmsc 5568 48339 "" 
 setv game "f3f18986-f323-4e10-bbd8-4401026883f4" va00 
-setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 5727 5802 48222 48231 48439 48439 
-rtyp va00 1 
-rmsc 5764 48332 "" 
-setv game "5252e51e-e71f-46d8-a84b-7748d02c010c" va00 
 setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 5802 6010 47950 47950 48231 48231 
 rtyp va00 1 
 rmsc 5906 48090 "" 
 setv game "f0e5ae90-f022-4a41-a160-670084618519" va00 
-setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 5802 5939 48231 48231 48439 48439 
-rtyp va00 2 
-rmsc 5870 48335 "" 
-setv game "1080dde3-d6e2-4b85-b048-050bc760591a" va00 
 setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 2136 2283 47950 47950 48231 48231 
 rtyp va00 7 
 rmsc 2209 48090 "" 
@@ -1982,15 +1974,15 @@ rtyp va00 1
 rmsc 5783 49247 "" 
 setv game "08b9f6b2-a970-4ca6-98d4-7b8cb33ee6db" va00 
 setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 6391 6594 48835 48946 49145 49145 
-rtyp va00 3 
+rtyp va00 0 
 rmsc 6492 49017 "" 
 setv game "ea52f5c3-653c-4537-b9f1-b86fec555b62" va00 
 setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 6289 6391 48835 48835 49145 49145 
-rtyp va00 3 
+rtyp va00 0 
 rmsc 6340 48990 "" 
 setv game "e5347167-e517-4f3f-97a8-e3930486e8e9" va00 
 setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 6122 6289 48929 48835 49145 49145 
-rtyp va00 3 
+rtyp va00 0 
 rmsc 6205 49013 "" 
 setv game "a6dfbdaa-44f8-4165-b109-a3f0550e09fb" va00 
 setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 8437 8535 49101 49095 49392 49375 
@@ -2793,6 +2785,14 @@ setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 8615 8888 47601 47601
 rtyp va00 0 
 rmsc 8751 47775 "" 
 setv game "43cc845d-d699-4337-9e23-e3afd68441e2" va00 
+setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 5802 5939 48231 48231 48439 48439 
+rtyp va00 undefined 
+rmsc 5870 48335 "" 
+setv game "1080dde3-d6e2-4b85-b048-050bc760591a" va00 
+setv va00 addr game "febb068e-efc2-4e43-8251-96c82d166fd3" 5727 5802 48222 48231 48439 48439 
+rtyp va00 undefined 
+rmsc 5764 48332 "" 
+setv game "5252e51e-e71f-46d8-a84b-7748d02c010c" va00 
 door game "7cdfe212-605f-43f5-8661-a53aabdf98a1" game "e6313864-7e79-41b1-8203-3c5d21183fe3" 100 
 door game "7cdfe212-605f-43f5-8661-a53aabdf98a1" game "d0f58486-fd15-4111-a6d7-0266238c6a5a" 100 
 door game "7cdfe212-605f-43f5-8661-a53aabdf98a1" game "af211af1-c681-4423-9da7-0f5fff6542a0" 49 
@@ -3020,7 +3020,7 @@ door game "38a56183-6a13-42f6-add6-322bba2c51fa" game "adc04e30-8ee1-4676-aead-d
 door game "adc04e30-8ee1-4676-aead-de44f196ea93" game "fe148431-4c71-454a-b5f2-02de958ecfe4" 100 
 door game "b7696f9f-5429-41fd-a07d-e2495f3c0435" game "fe148431-4c71-454a-b5f2-02de958ecfe4" 100 
 door game "b7696f9f-5429-41fd-a07d-e2495f3c0435" game "090ee8dd-05d4-4f03-8e0e-c9c131e5fa6b" 100 
-door game "090ee8dd-05d4-4f03-8e0e-c9c131e5fa6b" game "e8962b46-9488-4b62-84ad-547939c2ec71" 99 
+door game "090ee8dd-05d4-4f03-8e0e-c9c131e5fa6b" game "e8962b46-9488-4b62-84ad-547939c2ec71" 50 
 door game "e8962b46-9488-4b62-84ad-547939c2ec71" game "70a2f6e4-b4dc-4dcd-a79f-8b279898745d" 100 
 door game "70a2f6e4-b4dc-4dcd-a79f-8b279898745d" game "4b2f797f-61d5-4b40-9205-0f4f2bfaa9fe" 100 
 door game "4b2f797f-61d5-4b40-9205-0f4f2bfaa9fe" game "52bba31a-f864-45ca-bb11-5a368624f3e7" 100 
@@ -3051,29 +3051,22 @@ door game "c319fc34-8736-4586-87e9-7ffe1f886e2a" game "ee070dc8-67ae-4874-8310-f
 door game "c319fc34-8736-4586-87e9-7ffe1f886e2a" game "2a6b0c59-6736-49bd-84b0-031e234d70f4" 100 
 door game "ca09a0be-e5b4-4791-bc9b-5d50f186f4a1" game "bc24b34e-d87b-4cd5-b24f-17b787c7b1b8" 100 
 door game "ca09a0be-e5b4-4791-bc9b-5d50f186f4a1" game "f3f18986-f323-4e10-bbd8-4401026883f4" 100 
-door game "ca09a0be-e5b4-4791-bc9b-5d50f186f4a1" game "5252e51e-e71f-46d8-a84b-7748d02c010c" 100 
 door game "ca09a0be-e5b4-4791-bc9b-5d50f186f4a1" game "8406ef5a-74bc-4dbc-bb05-4468331d3e82" 100 
-door game "bc24b34e-d87b-4cd5-b24f-17b787c7b1b8" game "1080dde3-d6e2-4b85-b048-050bc760591a" 40 
 door game "bc24b34e-d87b-4cd5-b24f-17b787c7b1b8" game "a9ea4135-e03f-4d69-a149-c84a67a3bb4f" 100 
 door game "685391a6-ac2a-422a-83de-2cf6b1a503a7" game "f09b5167-7bfd-4ee3-96e5-e37a1ae72250" 100 
 door game "685391a6-ac2a-422a-83de-2cf6b1a503a7" game "a9ea4135-e03f-4d69-a149-c84a67a3bb4f" 20 
-door game "f09b5167-7bfd-4ee3-96e5-e37a1ae72250" game "f0e5ae90-f022-4a41-a160-670084618519" 40 
-door game "f09b5167-7bfd-4ee3-96e5-e37a1ae72250" game "1080dde3-d6e2-4b85-b048-050bc760591a" 100 
+door game "f09b5167-7bfd-4ee3-96e5-e37a1ae72250" game "f0e5ae90-f022-4a41-a160-670084618519" 10 
 door game "f09b5167-7bfd-4ee3-96e5-e37a1ae72250" game "a9ea4135-e03f-4d69-a149-c84a67a3bb4f" 40 
-door game "35494775-65e2-43d4-a474-ed5a0180f723" game "c6068085-aa76-4751-8988-5393a6b325e5" 30 
+door game "35494775-65e2-43d4-a474-ed5a0180f723" game "c6068085-aa76-4751-8988-5393a6b325e5" 10 
 door game "35494775-65e2-43d4-a474-ed5a0180f723" game "51cfce5d-9c91-41f0-96f2-05ebefb914aa" 100 
 door game "35494775-65e2-43d4-a474-ed5a0180f723" game "505b8315-08ce-47dc-bf9e-4b5591f78ef9" 100 
 door game "35494775-65e2-43d4-a474-ed5a0180f723" game "22a3bdc6-c9f8-4d6b-a544-5a97d83c87d4" 100 
 door game "42063b7e-bef8-4d83-8cc7-a64eae96e8f6" game "f3f18986-f323-4e10-bbd8-4401026883f4" 100 
-door game "42063b7e-bef8-4d83-8cc7-a64eae96e8f6" game "4aada3ca-e0e6-42e3-8073-b7e4f4cc9bca" 30 
+door game "42063b7e-bef8-4d83-8cc7-a64eae96e8f6" game "4aada3ca-e0e6-42e3-8073-b7e4f4cc9bca" 10 
 door game "42063b7e-bef8-4d83-8cc7-a64eae96e8f6" game "ee070dc8-67ae-4874-8310-f68504d88a05" 100 
 door game "42063b7e-bef8-4d83-8cc7-a64eae96e8f6" game "344be7a7-52e0-4257-a3b1-8a27c81dc5da" 100 
 door game "42063b7e-bef8-4d83-8cc7-a64eae96e8f6" game "505b8315-08ce-47dc-bf9e-4b5591f78ef9" 100 
-door game "f3f18986-f323-4e10-bbd8-4401026883f4" game "5252e51e-e71f-46d8-a84b-7748d02c010c" 100 
-door game "f3f18986-f323-4e10-bbd8-4401026883f4" game "d4d3bf8a-49a6-41cf-8aee-f4862762e062" 30 
-door game "5252e51e-e71f-46d8-a84b-7748d02c010c" game "1080dde3-d6e2-4b85-b048-050bc760591a" 99 
-door game "5252e51e-e71f-46d8-a84b-7748d02c010c" game "468a7c5b-acab-4188-a8a1-4e9dab52b669" 30 
-door game "f0e5ae90-f022-4a41-a160-670084618519" game "1080dde3-d6e2-4b85-b048-050bc760591a" 40 
+door game "f3f18986-f323-4e10-bbd8-4401026883f4" game "d4d3bf8a-49a6-41cf-8aee-f4862762e062" 10 
 door game "f0e5ae90-f022-4a41-a160-670084618519" game "c6dddc0a-0171-413c-acd0-f239965febc2" 100 
 door game "f0e5ae90-f022-4a41-a160-670084618519" game "468a7c5b-acab-4188-a8a1-4e9dab52b669" 100 
 door game "f0e5ae90-f022-4a41-a160-670084618519" game "09b1618b-71b2-4ea9-a7e7-a880083e40b3" 100 
@@ -3378,7 +3371,7 @@ door game "d4d3bf8a-49a6-41cf-8aee-f4862762e062" game "4aada3ca-e0e6-42e3-8073-b
 door game "d4d3bf8a-49a6-41cf-8aee-f4862762e062" game "7f002602-6e83-4c8e-ba1e-85e519a73ab2" 100 
 door game "4aada3ca-e0e6-42e3-8073-b7e4f4cc9bca" game "d66f35e3-6969-4096-a41e-1b6304e14037" 100 
 door game "4aada3ca-e0e6-42e3-8073-b7e4f4cc9bca" game "d4282203-5d7e-490b-9f18-22c68b7d4eaf" 100 
-door game "c6068085-aa76-4751-8988-5393a6b325e5" game "22a3bdc6-c9f8-4d6b-a544-5a97d83c87d4" 30 
+door game "c6068085-aa76-4751-8988-5393a6b325e5" game "22a3bdc6-c9f8-4d6b-a544-5a97d83c87d4" 10 
 door game "c6068085-aa76-4751-8988-5393a6b325e5" game "d4282203-5d7e-490b-9f18-22c68b7d4eaf" 100 
 door game "c6068085-aa76-4751-8988-5393a6b325e5" game "f83ca8c4-8037-4497-bc59-871fa9185409" 100 
 door game "75d22fb4-1169-4aa0-8623-f7057ea2fe57" game "a17b4a11-5b94-4792-9e3a-157ab530b5d0" 100 
@@ -3424,7 +3417,7 @@ door game "51cfce5d-9c91-41f0-96f2-05ebefb914aa" game "cea9ccb3-8917-47a9-8449-e
 door game "51cfce5d-9c91-41f0-96f2-05ebefb914aa" game "22a3bdc6-c9f8-4d6b-a544-5a97d83c87d4" 100 
 door game "cea9ccb3-8917-47a9-8449-e045706ce7e5" game "505b8315-08ce-47dc-bf9e-4b5591f78ef9" 100 
 door game "cea9ccb3-8917-47a9-8449-e045706ce7e5" game "3e749fda-2c63-42ec-b8e9-6fc922ce816b" 100 
-door game "505b8315-08ce-47dc-bf9e-4b5591f78ef9" game "d4282203-5d7e-490b-9f18-22c68b7d4eaf" 30 
+door game "505b8315-08ce-47dc-bf9e-4b5591f78ef9" game "d4282203-5d7e-490b-9f18-22c68b7d4eaf" 10 
 door game "22a3bdc6-c9f8-4d6b-a544-5a97d83c87d4" game "675156ed-ba8d-4b59-950c-534c7392e764" 100 
 door game "675156ed-ba8d-4b59-950c-534c7392e764" game "0bd8ca3f-9ef2-4a50-a361-da98b424ec11" 100 
 door game "675156ed-ba8d-4b59-950c-534c7392e764" game "e5649b6d-3664-4f3e-8387-e419b70ae9ed" 50 
@@ -3856,7 +3849,7 @@ door game "ade75552-7242-4bdd-85c2-fa0637f001b3" game "4660959c-32fc-454e-9d22-a
 door game "f83ca8c4-8037-4497-bc59-871fa9185409" game "09876f3d-55bc-4d39-85ac-60abbfd635a6" 100 
 door game "4660959c-32fc-454e-9d22-a84a7e6ad163" game "09876f3d-55bc-4d39-85ac-60abbfd635a6" 100 
 door game "447f67eb-a6be-4e25-aeee-6e6a0946dea4" game "09876f3d-55bc-4d39-85ac-60abbfd635a6" 100 
-door game "4660959c-32fc-454e-9d22-a84a7e6ad163" game "c56bf102-b35d-4bae-b0cb-8537937aa8bd" 40 
+door game "4660959c-32fc-454e-9d22-a84a7e6ad163" game "c56bf102-b35d-4bae-b0cb-8537937aa8bd" 10 
 door game "22a3bdc6-c9f8-4d6b-a544-5a97d83c87d4" game "c56bf102-b35d-4bae-b0cb-8537937aa8bd" 99 
 door game "0bd8ca3f-9ef2-4a50-a361-da98b424ec11" game "c56bf102-b35d-4bae-b0cb-8537937aa8bd" 50 
 door game "c56bf102-b35d-4bae-b0cb-8537937aa8bd" game "0b2b2616-7a22-45eb-bce1-a120fb4dca98" 100 
@@ -3874,6 +3867,13 @@ door game "29ee18e3-1a9d-4c63-ab7d-400cb803481d" game "1f33e5d9-157c-464a-affa-9
 door game "1f33e5d9-157c-464a-affa-9d9812a73e29" game "43cc845d-d699-4337-9e23-e3afd68441e2" 100 
 door game "eb1c0097-d008-4d6f-81c9-6cd618827176" game "43cc845d-d699-4337-9e23-e3afd68441e2" 100 
 door game "30961a1f-68e5-43d1-8a14-9f10044822f2" game "43cc845d-d699-4337-9e23-e3afd68441e2" 100 
+door game "f0e5ae90-f022-4a41-a160-670084618519" game "1080dde3-d6e2-4b85-b048-050bc760591a" 10 
+door game "f09b5167-7bfd-4ee3-96e5-e37a1ae72250" game "1080dde3-d6e2-4b85-b048-050bc760591a" 100 
+door game "bc24b34e-d87b-4cd5-b24f-17b787c7b1b8" game "1080dde3-d6e2-4b85-b048-050bc760591a" 40 
+door game "468a7c5b-acab-4188-a8a1-4e9dab52b669" game "5252e51e-e71f-46d8-a84b-7748d02c010c" 10 
+door game "1080dde3-d6e2-4b85-b048-050bc760591a" game "5252e51e-e71f-46d8-a84b-7748d02c010c" 100 
+door game "ca09a0be-e5b4-4791-bc9b-5d50f186f4a1" game "5252e51e-e71f-46d8-a84b-7748d02c010c" 100 
+door game "f3f18986-f323-4e10-bbd8-4401026883f4" game "5252e51e-e71f-46d8-a84b-7748d02c010c" 100 
 delg "7cdfe212-605f-43f5-8661-a53aabdf98a1" 
 delg "e6313864-7e79-41b1-8203-3c5d21183fe3" 
 delg "c16b8b40-7b76-471e-b4e9-84197bd0923a" 
@@ -4031,9 +4031,7 @@ delg "f09b5167-7bfd-4ee3-96e5-e37a1ae72250"
 delg "35494775-65e2-43d4-a474-ed5a0180f723" 
 delg "42063b7e-bef8-4d83-8cc7-a64eae96e8f6" 
 delg "f3f18986-f323-4e10-bbd8-4401026883f4" 
-delg "5252e51e-e71f-46d8-a84b-7748d02c010c" 
 delg "f0e5ae90-f022-4a41-a160-670084618519" 
-delg "1080dde3-d6e2-4b85-b048-050bc760591a" 
 delg "bfca7f05-e9eb-4a56-a589-8d7f12bb3878" 
 delg "8240ed0b-dfc1-4807-901c-ac2b287b14f3" 
 delg "81c4bb9e-f2a3-4f7e-9e66-a5e679e41c88" 
@@ -4572,3 +4570,5 @@ delg "29ee18e3-1a9d-4c63-ab7d-400cb803481d"
 delg "eb1c0097-d008-4d6f-81c9-6cd618827176" 
 delg "1f33e5d9-157c-464a-affa-9d9812a73e29" 
 delg "43cc845d-d699-4337-9e23-e3afd68441e2" 
+delg "1080dde3-d6e2-4b85-b048-050bc760591a" 
+delg "5252e51e-e71f-46d8-a84b-7748d02c010c" 
